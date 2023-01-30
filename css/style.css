@@ -6,8 +6,8 @@
 
 .container{
     height: 100vh;
+    font-family: sans-serif;
 }
-
 
 .window{
     position: relative;
@@ -15,6 +15,38 @@
     background-color: black;
 }
 
+
+
+.icon-block, .fa-chevron-up, .speaker-view, .name{
+    cursor: pointer;
+}
+
+
+/* speaker view  */
+.speaker-view{
+    position: absolute;
+    display: flex;
+    right: 30px;
+    top: 10px;
+    color: white;
+    z-index: 2;
+
+}
+
+.speaker-view .speak, .wide-screen{
+    background-color: #4a4a4a;
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 0.7em;
+}
+
+.speaker-view .speak{
+    margin-right: 10px;
+}
+
+
+
+/* frame block  */
 
 .window #frames{
     display: flex;
@@ -31,6 +63,7 @@
 
 .window #frames .photo-frames{
     display: flex;
+    position: relative;
     width: calc(100% / 7);
     height: calc(100% / 4);
     min-width: 150px;
@@ -42,36 +75,98 @@
 .window #frames .photo-frames img{
     /* display: flex;
     height: 100%;*/
+
     padding: 3px 2px;
 
 } 
 
+.window #frames .photo-frames .name{
+
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    font-size: 0.8em;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.404);
+}
 
 
+/* player  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.nav{
+.player{
     display: flex;
+    align-items: center;
     height: 60px;
     background-color: #222222;
+
 }
 
-.left-icon{
+.player .icons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player .left-icon, .center-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
     color: white;
     font-size: 1.5em;
+    margin-left: 10px;
 }
 
-.left-icon
+.player .fa-chevron-up{
+    font-size: 0.3em;
+}
+
+
+.player .icon-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8em;
+}
+
+.player .icon-block span{
+    font-size: 0.6em;
+
+}
+
+.player .center-icon .icon-block .fa-share-from-square{
+    color: #4bc800;
+}
+
+.player .icons .right-icon{
+    display: flex;
+    align-items: center;
+    background-color: #9b9494;
+    height: 100%;
+    padding: 0 20px 0 20px;
+    color: rgb(167, 3, 3);
+    font-weight: bold;
+}
+
+
+/* scrollbar  */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: white; 
+  }
